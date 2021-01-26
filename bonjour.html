@@ -3,7 +3,7 @@
     <title>Greeting Message</title> 
     <style>
 #lbl {
-    font-family: monospace;
+    font-family: 'Bookman Old Style', serif;
     font-size: xx-large;
     color: #626262;
     padding: 5px;
@@ -15,6 +15,9 @@
 
 }
 #date{
+    font-size:large;
+    }
+#heure{
     font-size:large;
 }
 body{
@@ -67,6 +70,6 @@ body{
         greet = 'Bonsoir  ';
 
     document.getElementById('lbl').innerHTML =
-        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`+`<div id="heure"> Il est actuellement ${heure}</div>`;
+        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`+`<div id="heure"> Il est ${heure}</div>`;
 </script> 
 </html>
