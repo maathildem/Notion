@@ -1,11 +1,11 @@
 <html> 
 <head>
-    <title>Greeting Message</title> 
+    <title>Bonjour</title> 
     <style>
 #lbl {
-    font-family: 'Bookman Old Style', serif;
+    font-family: consolas;
     font-size: xx-large;
-    color: #626262;
+    color: #6d6875;
     padding: 5px;
     border: 1px solid #ececec;
     text-align: center;
@@ -21,7 +21,7 @@
     font-size:large;
 }
 body{
-    background-color: aliceblue;
+    background-color: #FFF1E6;
 }
     </style>
 </head>
@@ -58,7 +58,6 @@ body{
     var dayOfWeek = weekday[today.getDay()];
     var monthoftoday = month[today.getMonth()]
     var date = dayOfWeek+" " + today.getDate()+" " + monthoftoday +" " +today.getFullYear()  ;
-    var heure = today.getHours()+":" + today.getMinutes()
 
     var greet;
 
@@ -70,6 +69,7 @@ body{
         greet = 'Bonsoir  ';
 
     document.getElementById('lbl').innerHTML =
-        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`+`<div id="heure"> Il est ${heure}</div>`;
+        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`;
+
 </script> 
 </html>
