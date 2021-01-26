@@ -69,17 +69,36 @@
 .seconds-container {
   animation: rotate 60s infinite linear;
 }
-.minutes-container {
-  animation: rotate 3600s infinite steps(60);
-}
-.seconds-container {
-  animation: rotate 60s infinite steps(60);
-}
-.minutes-container {
-  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
-}
-.seconds-container {
-  transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+function initLocalClocks() {
+  var date = new Date;
+  var seconds = date.getSeconds();
+  var minutes = date.getMinutes();
+  var hours = date.getHours();
+  var hands = [
+    {
+      hand: 'hours',
+      angle: (hours * 30) + (minutes / 2)
+    },
+    {
+      hand: 'minutes',
+      angle: (minutes * 6)
+    },
+    {
+      hand: 'seconds',
+      angle: (seconds * 6)
+    }
+  ];
+  for (var j = 0; j < hands.length; j++) {
+    var elements = document.querySelectorAll('.' + hands[j].hand);
+    for (var k = 0; k < elements.length; k++) {
+        elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+        elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
+        // If this is a minute hand, note the seconds position (to calculate minute position later)
+        if (hands[j].hand === 'minutes') {
+          elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
+        }
+    }
+  }
 }
 </style>
 <article class="clock">
