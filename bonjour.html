@@ -36,11 +36,25 @@ body{
     weekday[5] = "vendredi";
     weekday[6] = "samedi";
 
+    var month = new Array(12);
+    month[0] = "janvier";
+    month[1] = "février";
+    month[2] = "mars";
+    month[3] = "avril";
+    month[4] = "mai";
+    month[5] = "juin";
+    month[6] = "juillet";
+    month[7] = "août";
+    month[8] = "septembre";
+    month[9] = "octobre";
+    month[10] = "novembre";
+    month[11] = "décembre";
     
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+    var monthoftoday = month[today.getMonth()]
+    var date = dayOfWeek+" " + today.getDate()+" " + monthoftoday +" " +today.getFullYear()  ;
 
     var greet;
 
