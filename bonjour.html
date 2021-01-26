@@ -55,6 +55,7 @@ body{
     var dayOfWeek = weekday[today.getDay()];
     var monthoftoday = month[today.getMonth()]
     var date = dayOfWeek+" " + today.getDate()+" " + monthoftoday +" " +today.getFullYear()  ;
+    var heure = today.getHours()+":" + today.getMinutes()
 
     var greet;
 
@@ -66,6 +67,6 @@ body{
         greet = 'Bonsoir  ';
 
     document.getElementById('lbl').innerHTML =
-        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`;
+        greet+="Mathilde" + `<div id="date"> Nous sommes le ${date}</div>`+`<div id="heure"> Il est actuellement ${heure}</div>`;
 </script> 
 </html>
